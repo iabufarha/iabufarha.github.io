@@ -130,7 +130,7 @@
 
 <h2 id="arabic-sarcasm-and-a-missing-dataset">Arabic, sarcasm, and a missing dataset</h2>
 
-<p>Sarcasm is woven into how Arabic speakers communicate online. It is how people express frustration with governments without putting it in plain terms. It is how they respond to news that is too grim to engage with directly. It is how they mock public figures and stay just on the right side of plausible deniability. Walk through Arabic Twitter on any day with a political story running, and sarcasm is not a rhetorical device — it is the dominant mode.</p>
+<p>Sarcasm is woven into how Arabic speakers communicate online. It is how people complain about a bad experience without quite saying so. It is how they vent about traffic, delays, and Monday mornings in a way that lands as funny rather than bitter. Walk through Arabic Twitter on any given day and sarcasm is not a rhetorical device — it is the dominant mode.</p>
 
 <p>Arabic NLP had made meaningful progress on sentiment analysis by 2019. Several datasets existed, benchmarks had been established, and transformer-based models trained on Arabic were beginning to appear. What did not exist was an Arabic sarcasm dataset. Not a public one. Not a benchmark. Nothing that would let a researcher train a model or measure how well it performed.</p>
 
@@ -138,7 +138,7 @@
 
 <h2 id="the-approach-re-annotating-what-already-existed">The approach: re-annotating what already existed</h2>
 
-<p>Rather than starting from scratch, the approach taken in this paper was to build on what was already there. Two existing Arabic sentiment datasets — the SemEval 2017 Arabic dataset and ASTD — had been carefully assembled and labelled. The tweets were already collected, already organised, already paired with sentiment labels. The question was: what happens if you add a sarcasm label on top?</p>
+<p>Rather than starting from scratch, I went back to what was already there. Two existing Arabic sentiment datasets — the SemEval 2017 Arabic dataset and ASTD — had been carefully assembled and labelled. The tweets were already collected, already organised, already paired with sentiment labels. The question was: what happens if you add a sarcasm label on top?</p>
 
 <p>Re-annotating existing data had a specific advantage: it produced <em>paired</em> labels. The same tweet, with the same sentiment label from the original annotation, now also had a sarcasm label. This meant we could look directly at the interaction between the two — not in the abstract, but across every tweet in the dataset.</p>
 
@@ -205,9 +205,9 @@
 
 <h2 id="what-came-next">What came next</h2>
 
-<p>ArSarcasm-v2 extended the dataset to 15,548 tweets — better dialectal coverage, cleaner distribution — and became the basis for the WANLP 2021 Shared Task on Sarcasm and Sentiment Detection in Arabic. The shared task drew significant participation from the Arabic NLP community and helped establish the benchmarks in a more systematic way.</p>
+<p>ArSarcasm-v2 extended the dataset to 15,548 tweets — better dialectal coverage, cleaner distribution — and became the basis for the WANLP 2021 Shared Task on Sarcasm and Sentiment Detection in Arabic.</p>
 
-<p>And the question that would not go away — the one about intended versus perceived sarcasm, about whether you could build a dataset where the labels came from authors rather than annotators — eventually led to the Arabic iSarcasmEval dataset and SemEval-2022 Task 6. But that is the next chapter.</p>
+<p>But the more lasting consequence of building ArSarcasm was what it revealed about the sentiment tools that already existed. Those tools had been trained and tested on datasets where 16% of the labels were quietly wrong — not through carelessness, but because no one had looked for sarcasm there. The datasets assumed sincerity. Arabic speakers online do not. Once you know the gap is there, you cannot unsee it — and fixing it, rather than working around it, became the next several years of work.</p>
 
   </article>
 
