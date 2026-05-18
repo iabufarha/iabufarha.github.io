@@ -68,7 +68,7 @@
               
               <!-- Blog -->
               <li class="nav-item active">
-                <a class="nav-link" href="/blog/">blog</a>
+                <a class="nav-link" href="/blog/">Blog</a>
               </li>
 
               <!-- Other pages -->
@@ -122,7 +122,7 @@
   </header>
 
   <article class="post-content">
-    <p>There is a tweet I think about often. In Arabic, it reads — roughly — “ما شاء الله، إنجازات الحكومة هذي السنة فاقت كل التوقعات.” On the surface, it’s praise: “God bless, the government’s achievements this year have exceeded all expectations.” Any Arabic speaker scrolling past it on Twitter would read it in the opposite direction in a fraction of a second. The praise is the joke. The “ما شاء الله” — usually a phrase of genuine admiration — becomes the knife. You can almost hear the eye-roll behind the screen.</p>
+    <p>There is a tweet I think about often. In Arabic, it reads — roughly — “يا سلام، ما أجمل يوم اثنين تبدأ فيه بثلاث ساعات في الزحمة وبطارية الجوال ميتة.” — “What a beautiful Monday, starting with three hours in traffic and a dead phone battery.” Any Arabic speaker scrolling past it on Twitter would read it in the opposite direction in a fraction of a second. The “ما أجمل” — usually a phrase of genuine admiration — is doing the opposite of its literal job. You can almost hear the sigh behind the screen.</p>
 
 <p>A sentiment classifier, of course, reads it as positive. A non-Arabic-speaking observer using machine translation would read it as positive too. And so somewhere between what the author <em>meant</em> and what the machine <em>saw</em>, the entire point of the sentence falls away. The model is not wrong in any narrow technical sense. It has correctly identified the surface form. It has simply missed the human being on the other end of the keyboard, who meant the opposite of what they said and trusted the rest of us to understand.</p>
 
@@ -132,7 +132,7 @@
 
 <p>When I started at Edinburgh, Arabic NLP was in a healthier state than it had ever been. Sentiment analysis worked reasonably well. Named entity recognition had matured. Arabic-English machine translation had improved enormously with the rise of neural models. There were Arabic BERT variants on the horizon. The community was no longer treating Arabic as an exotic outlier; it was being taken seriously.</p>
 
-<p>But sarcasm detection in Arabic was, essentially, a blank page. No datasets. No benchmarks. No shared tasks. A handful of papers on irony in modern standard Arabic, mostly small-scale, mostly inconclusive. Meanwhile, anyone who used Arabic Twitter for ten minutes could see that sarcasm was everywhere. It was how people criticised governments without naming them. It was how they mocked public figures and survived it. It was how they vented about traffic, electricity cuts, exam results, and football matches. Sarcasm was not a quirky edge case of Arabic online discourse — it was load-bearing.</p>
+<p>But sarcasm detection in Arabic was, essentially, a blank page. No datasets. No benchmarks. No shared tasks. A handful of papers on irony in modern standard Arabic, mostly small-scale, mostly inconclusive. Meanwhile, anyone who used Arabic Twitter for ten minutes could see that sarcasm was everywhere. It was how people vented about traffic, bad service, exam results, and Monday mornings. It was how they expressed frustration with everyday life without saying so directly. Sarcasm was not a quirky edge case of Arabic online discourse — it was load-bearing.</p>
 
 <p>The discrepancy was strange. We had tools that could tell you the sentiment of an Arabic tweet, the dialect of an Arabic tweet, the entities mentioned in an Arabic tweet — but we had no reliable way to tell whether the author meant any of it. That seemed like a problem worth working on.</p>
 
@@ -180,7 +180,64 @@
 
 <!-- INSERT FIGURE: bar chart comparing human individual, human majority-vote, and best model F1-sarcasm scores -->
 
-<p>The more interesting question was where each side fails. We did error analysis on both, and the patterns were strikingly similar in shape but different in texture. For the models, around 83% of errors involved missing world knowledge or context: a reference to a specific political scandal, a footballer’s nickname, a meme from a TV show, an inside joke between the author and their friends. The model could parse every word correctly and still miss the joke entirely because it did not know the <em>thing</em> the joke was about. Humans made the same kind of mistake, just less often, and with their own characteristic failure mode: idioms and proverbs accounted for a significant share of human errors. A sarcastic deployment of a classical Arabic proverb might land for one annotator and slip past another.</p>
+<p>The more interesting question was where each side fails. We did error analysis on both, and the patterns were strikingly similar in shape but different in texture. The table below breaks down the types of sarcasm in the dataset and where humans and models each struggled:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sarcasm type</th>
+      <th>Examples</th>
+      <th>Human errors</th>
+      <th>Model errors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Idioms</td>
+      <td>58</td>
+      <td>13</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Proverbs</td>
+      <td>45</td>
+      <td>10</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Referencing context / world knowledge</td>
+      <td>45</td>
+      <td>15</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>Complex metaphors</td>
+      <td>45</td>
+      <td>11</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Dialect-specific words</td>
+      <td>21</td>
+      <td>8</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Animal / object references</td>
+      <td>11</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Words in uncommon context</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For the models, around 83% of errors involved missing world knowledge or context: a footballer’s nickname, a meme from a TV show, an inside joke between the author and their friends. The model could parse every word correctly and still miss the joke entirely because it did not know the <em>thing</em> the joke was about. Humans made the same kind of mistake, just less often, and with their own characteristic failure mode: idioms and proverbs accounted for a significant share of human errors. A sarcastic deployment of a classical Arabic proverb might land for one annotator and slip past another. Notably, models made zero errors on proverbs — not because they understood them, but because they happened to get the label right for the wrong reasons.</p>
 
 <p>What this suggests, I think, is that sarcasm is not primarily a language problem. It’s a knowledge problem dressed up as a language problem. Both humans and models can read the sentence; both stumble when reading the sentence requires also knowing something about the world the sentence is reaching for. You cannot solve sarcasm purely with better text representations. At some point, you have to know who the prime minister is, what happened last Tuesday, and which football team your friend supports.</p>
 

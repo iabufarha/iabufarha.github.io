@@ -68,7 +68,7 @@
               
               <!-- Blog -->
               <li class="nav-item active">
-                <a class="nav-link" href="/blog/">blog</a>
+                <a class="nav-link" href="/blog/">Blog</a>
               </li>
 
               <!-- Other pages -->
@@ -124,7 +124,7 @@
   <article class="post-content">
     <p>Run any Arabic tweet through a decent sentiment classifier and it will tell you whether the author sounds happy, unhappy, or neutral. The tools have gotten good at this. They’ve been trained on thousands of labelled examples, fine-tuned on Arabic-specific language models, benchmarked across multiple datasets. For a lot of tweets, they work.</p>
 
-<p>Then you try it on something like: <em>“والله ما أعرف كيف نتحمّل هالكفاءة الحكومية”</em> — “I honestly don’t know how we put up with this government’s efficiency.” Any Arabic speaker reads that as contempt in a thin disguise. The word for efficiency is doing the opposite of its literal job. The classifier outputs: <em>positive</em>.</p>
+<p>Then you try it on something like: <em>“يا سلام، الخدمة كانت ممتازة، ما انتظرنا غير ساعتين”</em> — “The service was excellent, we only waited two hours.” Any Arabic speaker reads that as frustration in a thin disguise. The word for excellent is doing the opposite of its literal job. The classifier outputs: <em>positive</em>.</p>
 
 <p>That is the sarcasm problem. It is not exotic. It is everywhere.</p>
 
@@ -143,6 +143,37 @@
 <p>Re-annotating existing data had a specific advantage: it produced <em>paired</em> labels. The same tweet, with the same sentiment label from the original annotation, now also had a sarcasm label. This meant we could look directly at the interaction between the two — not in the abstract, but across every tweet in the dataset.</p>
 
 <p>The resulting dataset was ArSarcasm: 10,547 tweets, each labelled for sarcasm (binary), sentiment (positive/negative/neutral), and dialect (Egyptian, Levantine, Gulf, Maghrebi, Modern Standard Arabic).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Categories</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sarcasm</td>
+      <td>Sarcastic / Not sarcastic</td>
+    </tr>
+    <tr>
+      <td>Sentiment</td>
+      <td>Positive / Negative / Neutral</td>
+    </tr>
+    <tr>
+      <td>Dialect</td>
+      <td>Egyptian · Levantine · Gulf · Maghrebi · MSA</td>
+    </tr>
+    <tr>
+      <td>Total tweets</td>
+      <td>10,547</td>
+    </tr>
+    <tr>
+      <td>Sarcasm prevalence</td>
+      <td>~16%</td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- INSERT FIGURE: bar chart showing sarcasm prevalence across different Arabic dialects in the ArSarcasm dataset -->
 

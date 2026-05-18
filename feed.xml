@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://iabufarha.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://iabufarha.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-18T09:58:28+01:00</updated><id>https://iabufarha.github.io/feed.xml</id><title type="html">blank</title><subtitle>The personal website of Dr. Ibrahim Abu Farha, Senior AI/ML Engineer and NLP Scientist specialising in Arabic NLP, LLMs, and RAG systems.
-</subtitle><entry><title type="html">Arabic Sarcasm Detection: Four Years of Trying to Teach Machines What We Don’t Quite Mean</title><link href="https://iabufarha.github.io/blog/2023/arabic-sarcasm-detection-phd/" rel="alternate" type="text/html" title="Arabic Sarcasm Detection: Four Years of Trying to Teach Machines What We Don’t Quite Mean" /><published>2023-08-01T00:00:00+01:00</published><updated>2023-08-01T00:00:00+01:00</updated><id>https://iabufarha.github.io/blog/2023/arabic-sarcasm-detection-phd</id><content type="html" xml:base="https://iabufarha.github.io/blog/2023/arabic-sarcasm-detection-phd/"><![CDATA[<p>There is a tweet I think about often. In Arabic, it reads — roughly — “ما شاء الله، إنجازات الحكومة هذي السنة فاقت كل التوقعات.” On the surface, it’s praise: “God bless, the government’s achievements this year have exceeded all expectations.” Any Arabic speaker scrolling past it on Twitter would read it in the opposite direction in a fraction of a second. The praise is the joke. The “ما شاء الله” — usually a phrase of genuine admiration — becomes the knife. You can almost hear the eye-roll behind the screen.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://iabufarha.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://iabufarha.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-18T11:31:37+01:00</updated><id>https://iabufarha.github.io/feed.xml</id><title type="html">blank</title><subtitle>The personal website of Dr. Ibrahim Abu Farha, Senior AI/ML Engineer and NLP Scientist specialising in Arabic NLP, LLMs, and RAG systems.
+</subtitle><entry><title type="html">Arabic Sarcasm Detection: Four Years of Trying to Teach Machines What We Don’t Quite Mean</title><link href="https://iabufarha.github.io/blog/2023/arabic-sarcasm-detection-phd/" rel="alternate" type="text/html" title="Arabic Sarcasm Detection: Four Years of Trying to Teach Machines What We Don’t Quite Mean" /><published>2023-08-01T00:00:00+01:00</published><updated>2023-08-01T00:00:00+01:00</updated><id>https://iabufarha.github.io/blog/2023/arabic-sarcasm-detection-phd</id><content type="html" xml:base="https://iabufarha.github.io/blog/2023/arabic-sarcasm-detection-phd/"><![CDATA[<p>There is a tweet I think about often. In Arabic, it reads — roughly — “يا سلام، ما أجمل يوم اثنين تبدأ فيه بثلاث ساعات في الزحمة وبطارية الجوال ميتة.” — “What a beautiful Monday, starting with three hours in traffic and a dead phone battery.” Any Arabic speaker scrolling past it on Twitter would read it in the opposite direction in a fraction of a second. The “ما أجمل” — usually a phrase of genuine admiration — is doing the opposite of its literal job. You can almost hear the sigh behind the screen.</p>
 
 <p>A sentiment classifier, of course, reads it as positive. A non-Arabic-speaking observer using machine translation would read it as positive too. And so somewhere between what the author <em>meant</em> and what the machine <em>saw</em>, the entire point of the sentence falls away. The model is not wrong in any narrow technical sense. It has correctly identified the surface form. It has simply missed the human being on the other end of the keyboard, who meant the opposite of what they said and trusted the rest of us to understand.</p>
 
@@ -9,7 +9,7 @@
 
 <p>When I started at Edinburgh, Arabic NLP was in a healthier state than it had ever been. Sentiment analysis worked reasonably well. Named entity recognition had matured. Arabic-English machine translation had improved enormously with the rise of neural models. There were Arabic BERT variants on the horizon. The community was no longer treating Arabic as an exotic outlier; it was being taken seriously.</p>
 
-<p>But sarcasm detection in Arabic was, essentially, a blank page. No datasets. No benchmarks. No shared tasks. A handful of papers on irony in modern standard Arabic, mostly small-scale, mostly inconclusive. Meanwhile, anyone who used Arabic Twitter for ten minutes could see that sarcasm was everywhere. It was how people criticised governments without naming them. It was how they mocked public figures and survived it. It was how they vented about traffic, electricity cuts, exam results, and football matches. Sarcasm was not a quirky edge case of Arabic online discourse — it was load-bearing.</p>
+<p>But sarcasm detection in Arabic was, essentially, a blank page. No datasets. No benchmarks. No shared tasks. A handful of papers on irony in modern standard Arabic, mostly small-scale, mostly inconclusive. Meanwhile, anyone who used Arabic Twitter for ten minutes could see that sarcasm was everywhere. It was how people vented about traffic, bad service, exam results, and Monday mornings. It was how they expressed frustration with everyday life without saying so directly. Sarcasm was not a quirky edge case of Arabic online discourse — it was load-bearing.</p>
 
 <p>The discrepancy was strange. We had tools that could tell you the sentiment of an Arabic tweet, the dialect of an Arabic tweet, the entities mentioned in an Arabic tweet — but we had no reliable way to tell whether the author meant any of it. That seemed like a problem worth working on.</p>
 
@@ -57,7 +57,64 @@
 
 <!-- INSERT FIGURE: bar chart comparing human individual, human majority-vote, and best model F1-sarcasm scores -->
 
-<p>The more interesting question was where each side fails. We did error analysis on both, and the patterns were strikingly similar in shape but different in texture. For the models, around 83% of errors involved missing world knowledge or context: a reference to a specific political scandal, a footballer’s nickname, a meme from a TV show, an inside joke between the author and their friends. The model could parse every word correctly and still miss the joke entirely because it did not know the <em>thing</em> the joke was about. Humans made the same kind of mistake, just less often, and with their own characteristic failure mode: idioms and proverbs accounted for a significant share of human errors. A sarcastic deployment of a classical Arabic proverb might land for one annotator and slip past another.</p>
+<p>The more interesting question was where each side fails. We did error analysis on both, and the patterns were strikingly similar in shape but different in texture. The table below breaks down the types of sarcasm in the dataset and where humans and models each struggled:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sarcasm type</th>
+      <th>Examples</th>
+      <th>Human errors</th>
+      <th>Model errors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Idioms</td>
+      <td>58</td>
+      <td>13</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Proverbs</td>
+      <td>45</td>
+      <td>10</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Referencing context / world knowledge</td>
+      <td>45</td>
+      <td>15</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>Complex metaphors</td>
+      <td>45</td>
+      <td>11</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Dialect-specific words</td>
+      <td>21</td>
+      <td>8</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Animal / object references</td>
+      <td>11</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Words in uncommon context</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For the models, around 83% of errors involved missing world knowledge or context: a footballer’s nickname, a meme from a TV show, an inside joke between the author and their friends. The model could parse every word correctly and still miss the joke entirely because it did not know the <em>thing</em> the joke was about. Humans made the same kind of mistake, just less often, and with their own characteristic failure mode: idioms and proverbs accounted for a significant share of human errors. A sarcastic deployment of a classical Arabic proverb might land for one annotator and slip past another. Notably, models made zero errors on proverbs — not because they understood them, but because they happened to get the label right for the wrong reasons.</p>
 
 <p>What this suggests, I think, is that sarcasm is not primarily a language problem. It’s a knowledge problem dressed up as a language problem. Both humans and models can read the sentence; both stumble when reading the sentence requires also knowing something about the world the sentence is reaching for. You cannot solve sarcasm purely with better text representations. At some point, you have to know who the prime minister is, what happened last Tuesday, and which football team your friend supports.</p>
 
@@ -81,7 +138,7 @@
 
 <p>Arabic NLP is in a different place now than it was in 2019. There are better models, more data, more shared tasks, more researchers. Sarcasm detection is still hard — possibly harder than I thought when I started, because the easy version of the task was the one with the noisier labels. But the datasets are out in the world, the benchmarks exist, and people I do not know are publishing on them. That is, I think, the right thing to want from a PhD: not that you finished the problem, but that you left it in a state where other people could keep working on it, and would.</p>]]></content><author><name></name></author><category term="research" /><category term="arabic-nlp" /><category term="sarcasm" /><category term="phd" /><category term="research" /><summary type="html"><![CDATA[A reflection on my PhD at the University of Edinburgh — building the first datasets and benchmarks for Arabic sarcasm detection, and what they taught me about language, dialect, and the limits of models.]]></summary></entry><entry><title type="html">When Sentiment Lies: Building the First Arabic Sarcasm Dataset</title><link href="https://iabufarha.github.io/blog/2020/arsarcasm-arabic-sarcasm-dataset/" rel="alternate" type="text/html" title="When Sentiment Lies: Building the First Arabic Sarcasm Dataset" /><published>2020-05-01T00:00:00+01:00</published><updated>2020-05-01T00:00:00+01:00</updated><id>https://iabufarha.github.io/blog/2020/arsarcasm-arabic-sarcasm-dataset</id><content type="html" xml:base="https://iabufarha.github.io/blog/2020/arsarcasm-arabic-sarcasm-dataset/"><![CDATA[<p>Run any Arabic tweet through a decent sentiment classifier and it will tell you whether the author sounds happy, unhappy, or neutral. The tools have gotten good at this. They’ve been trained on thousands of labelled examples, fine-tuned on Arabic-specific language models, benchmarked across multiple datasets. For a lot of tweets, they work.</p>
 
-<p>Then you try it on something like: <em>“والله ما أعرف كيف نتحمّل هالكفاءة الحكومية”</em> — “I honestly don’t know how we put up with this government’s efficiency.” Any Arabic speaker reads that as contempt in a thin disguise. The word for efficiency is doing the opposite of its literal job. The classifier outputs: <em>positive</em>.</p>
+<p>Then you try it on something like: <em>“يا سلام، الخدمة كانت ممتازة، ما انتظرنا غير ساعتين”</em> — “The service was excellent, we only waited two hours.” Any Arabic speaker reads that as frustration in a thin disguise. The word for excellent is doing the opposite of its literal job. The classifier outputs: <em>positive</em>.</p>
 
 <p>That is the sarcasm problem. It is not exotic. It is everywhere.</p>
 
@@ -100,6 +157,37 @@
 <p>Re-annotating existing data had a specific advantage: it produced <em>paired</em> labels. The same tweet, with the same sentiment label from the original annotation, now also had a sarcasm label. This meant we could look directly at the interaction between the two — not in the abstract, but across every tweet in the dataset.</p>
 
 <p>The resulting dataset was ArSarcasm: 10,547 tweets, each labelled for sarcasm (binary), sentiment (positive/negative/neutral), and dialect (Egyptian, Levantine, Gulf, Maghrebi, Modern Standard Arabic).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Categories</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sarcasm</td>
+      <td>Sarcastic / Not sarcastic</td>
+    </tr>
+    <tr>
+      <td>Sentiment</td>
+      <td>Positive / Negative / Neutral</td>
+    </tr>
+    <tr>
+      <td>Dialect</td>
+      <td>Egyptian · Levantine · Gulf · Maghrebi · MSA</td>
+    </tr>
+    <tr>
+      <td>Total tweets</td>
+      <td>10,547</td>
+    </tr>
+    <tr>
+      <td>Sarcasm prevalence</td>
+      <td>~16%</td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- INSERT FIGURE: bar chart showing sarcasm prevalence across different Arabic dialects in the ArSarcasm dataset -->
 
