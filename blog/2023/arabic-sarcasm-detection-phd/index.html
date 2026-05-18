@@ -1,5 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://iabufarha.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://iabufarha.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-05-18T09:58:28+01:00</updated><id>https://iabufarha.github.io/feed.xml</id><title type="html">blank</title><subtitle>The personal website of Dr. Ibrahim Abu Farha, Senior AI/ML Engineer and NLP Scientist specialising in Arabic NLP, LLMs, and RAG systems.
-</subtitle><entry><title type="html">Arabic Sarcasm Detection: Four Years of Trying to Teach Machines What We Don’t Quite Mean</title><link href="https://iabufarha.github.io/blog/2023/arabic-sarcasm-detection-phd/" rel="alternate" type="text/html" title="Arabic Sarcasm Detection: Four Years of Trying to Teach Machines What We Don’t Quite Mean" /><published>2023-08-01T00:00:00+01:00</published><updated>2023-08-01T00:00:00+01:00</updated><id>https://iabufarha.github.io/blog/2023/arabic-sarcasm-detection-phd</id><content type="html" xml:base="https://iabufarha.github.io/blog/2023/arabic-sarcasm-detection-phd/"><![CDATA[<p>There is a tweet I think about often. In Arabic, it reads — roughly — “ما شاء الله، إنجازات الحكومة هذي السنة فاقت كل التوقعات.” On the surface, it’s praise: “God bless, the government’s achievements this year have exceeded all expectations.” Any Arabic speaker scrolling past it on Twitter would read it in the opposite direction in a fraction of a second. The praise is the joke. The “ما شاء الله” — usually a phrase of genuine admiration — becomes the knife. You can almost hear the eye-roll behind the screen.</p>
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>        
+    <!-- Metadata, OpenGraph and Schema.org -->
+    
+    <!-- Website verification -->
+    <meta name="google-site-verification" content="M2xkyQ9JGC1Bj0VddlY-29S57PvT-fv-vWyCTWyo85E" />
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ibrahim Abu Farha | Arabic Sarcasm Detection: Four Years of Trying to Teach Machines What We Don't Quite Mean</title>
+    <meta name="author" content="Ibrahim Abu Farha" />
+    <meta name="description" content="A reflection on my PhD at the University of Edinburgh — building the first datasets and benchmarks for Arabic sarcasm detection, and what they taught me about language, dialect, and the limits of models." />
+    <meta name="keywords" content="Ibrahim Abu Farha, NLP, Arabic NLP, sarcasm detection, sentiment analysis, large language models, RAG, machine learning" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+    <!-- Styles -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://iabufarha.github.io/blog/2023/arabic-sarcasm-detection-phd/">
+
+    <!-- Dark Mode -->
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="https://iabufarha.github.io/"><span class="font-weight-bold">Ibrahim</span> Abu Farha</a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">About</a>
+              </li>
+              
+              <!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">blog</a>
+              </li>
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/publications/">Publications</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/resources/">Resources</a>
+              </li>
+
+              <!-- Toogle theme mode -->
+              <div class="toggle-container">
+                <a id="light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                </a>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="container mt-5">
+      <!-- _layouts/post.html -->
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Arabic Sarcasm Detection: Four Years of Trying to Teach Machines What We Don't Quite Mean</h1>
+    <p class="post-meta">August 1, 2023</p>
+    <p class="post-tags">
+      <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
+        ·  
+        <a href="/blog/tag/arabic-nlp">
+          <i class="fas fa-hashtag fa-sm"></i> arabic-nlp</a>  
+          <a href="/blog/tag/sarcasm">
+          <i class="fas fa-hashtag fa-sm"></i> sarcasm</a>  
+          <a href="/blog/tag/phd">
+          <i class="fas fa-hashtag fa-sm"></i> phd</a>  
+          <a href="/blog/tag/research">
+          <i class="fas fa-hashtag fa-sm"></i> research</a>  
+          
+        ·  
+        <a href="/blog/category/research">
+          <i class="fas fa-tag fa-sm"></i> research</a>  
+          
+
+    </p>
+  </header>
+
+  <article class="post-content">
+    <p>There is a tweet I think about often. In Arabic, it reads — roughly — “ما شاء الله، إنجازات الحكومة هذي السنة فاقت كل التوقعات.” On the surface, it’s praise: “God bless, the government’s achievements this year have exceeded all expectations.” Any Arabic speaker scrolling past it on Twitter would read it in the opposite direction in a fraction of a second. The praise is the joke. The “ما شاء الله” — usually a phrase of genuine admiration — becomes the knife. You can almost hear the eye-roll behind the screen.</p>
 
 <p>A sentiment classifier, of course, reads it as positive. A non-Arabic-speaking observer using machine translation would read it as positive too. And so somewhere between what the author <em>meant</em> and what the machine <em>saw</em>, the entire point of the sentence falls away. The model is not wrong in any narrow technical sense. It has correctly identified the surface form. It has simply missed the human being on the other end of the keyboard, who meant the opposite of what they said and trusted the rest of us to understand.</p>
 
@@ -79,58 +202,60 @@
 
 <p>Three openly available datasets, used in shared tasks, still being built on by other people. A shared task at SemEval-2022 that brought sixty research teams to a problem that had, three years earlier, barely been a problem at all. A clearer picture of where machines fail at one of the most human things about language — the ability to mean the opposite of what you say and to be understood anyway. And a set of arguments, backed by evidence, about why dialect representation matters in Arabic NLP, why first-party annotation matters for subjective tasks, and why neither humans nor models will solve sarcasm without world knowledge.</p>
 
-<p>Arabic NLP is in a different place now than it was in 2019. There are better models, more data, more shared tasks, more researchers. Sarcasm detection is still hard — possibly harder than I thought when I started, because the easy version of the task was the one with the noisier labels. But the datasets are out in the world, the benchmarks exist, and people I do not know are publishing on them. That is, I think, the right thing to want from a PhD: not that you finished the problem, but that you left it in a state where other people could keep working on it, and would.</p>]]></content><author><name></name></author><category term="research" /><category term="arabic-nlp" /><category term="sarcasm" /><category term="phd" /><category term="research" /><summary type="html"><![CDATA[A reflection on my PhD at the University of Edinburgh — building the first datasets and benchmarks for Arabic sarcasm detection, and what they taught me about language, dialect, and the limits of models.]]></summary></entry><entry><title type="html">When Sentiment Lies: Building the First Arabic Sarcasm Dataset</title><link href="https://iabufarha.github.io/blog/2020/arsarcasm-arabic-sarcasm-dataset/" rel="alternate" type="text/html" title="When Sentiment Lies: Building the First Arabic Sarcasm Dataset" /><published>2020-05-01T00:00:00+01:00</published><updated>2020-05-01T00:00:00+01:00</updated><id>https://iabufarha.github.io/blog/2020/arsarcasm-arabic-sarcasm-dataset</id><content type="html" xml:base="https://iabufarha.github.io/blog/2020/arsarcasm-arabic-sarcasm-dataset/"><![CDATA[<p>Run any Arabic tweet through a decent sentiment classifier and it will tell you whether the author sounds happy, unhappy, or neutral. The tools have gotten good at this. They’ve been trained on thousands of labelled examples, fine-tuned on Arabic-specific language models, benchmarked across multiple datasets. For a lot of tweets, they work.</p>
+<p>Arabic NLP is in a different place now than it was in 2019. There are better models, more data, more shared tasks, more researchers. Sarcasm detection is still hard — possibly harder than I thought when I started, because the easy version of the task was the one with the noisier labels. But the datasets are out in the world, the benchmarks exist, and people I do not know are publishing on them. That is, I think, the right thing to want from a PhD: not that you finished the problem, but that you left it in a state where other people could keep working on it, and would.</p>
 
-<p>Then you try it on something like: <em>“والله ما أعرف كيف نتحمّل هالكفاءة الحكومية”</em> — “I honestly don’t know how we put up with this government’s efficiency.” Any Arabic speaker reads that as contempt in a thin disguise. The word for efficiency is doing the opposite of its literal job. The classifier outputs: <em>positive</em>.</p>
+  </article>
 
-<p>That is the sarcasm problem. It is not exotic. It is everywhere.</p>
+</div>
 
-<h2 id="arabic-sarcasm-and-a-missing-dataset">Arabic, sarcasm, and a missing dataset</h2>
+    </div>
 
-<p>Sarcasm is woven into how Arabic speakers communicate online. It is how people express frustration with governments without putting it in plain terms. It is how they respond to news that is too grim to engage with directly. It is how they mock public figures and stay just on the right side of plausible deniability. Walk through Arabic Twitter on any day with a political story running, and sarcasm is not a rhetorical device — it is the dominant mode.</p>
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2026 Ibrahim  Abu Farha. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
 
-<p>Arabic NLP had made meaningful progress on sentiment analysis by 2019. Several datasets existed, benchmarks had been established, and transformer-based models trained on Arabic were beginning to appear. What did not exist was an Arabic sarcasm dataset. Not a public one. Not a benchmark. Nothing that would let a researcher train a model or measure how well it performed.</p>
+      </div>
+    </footer>
 
-<p>This was a peculiar gap, because sarcasm and sentiment analysis are not independent problems. Sarcasm is, among other things, a mechanism for saying the opposite of what you mean. A sentence that <em>looks</em> positive is actually negative. If your sentiment tool cannot detect sarcasm, it is not just missing sarcasm — it is actively getting sentiment wrong on a non-trivial fraction of the data.</p>
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<h2 id="the-approach-re-annotating-what-already-existed">The approach: re-annotating what already existed</h2>
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js" integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
 
-<p>Rather than starting from scratch, the approach taken in this paper was to build on what was already there. Two existing Arabic sentiment datasets — the SemEval 2017 Arabic dataset and ASTD — had been carefully assembled and labelled. The tweets were already collected, already organised, already paired with sentiment labels. The question was: what happens if you add a sarcasm label on top?</p>
+    <!-- Mansory & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+    
+  <!-- Medium Zoom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script src="/assets/js/common.js"></script>
 
-<p>Re-annotating existing data had a specific advantage: it produced <em>paired</em> labels. The same tweet, with the same sentiment label from the original annotation, now also had a sarcasm label. This meant we could look directly at the interaction between the two — not in the abstract, but across every tweet in the dataset.</p>
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
-<p>The resulting dataset was ArSarcasm: 10,547 tweets, each labelled for sarcasm (binary), sentiment (positive/negative/neutral), and dialect (Egyptian, Levantine, Gulf, Maghrebi, Modern Standard Arabic).</p>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145380663-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-145380663-1');
+  </script>
+  </body>
+</html>
 
-<!-- INSERT FIGURE: bar chart showing sarcasm prevalence across different Arabic dialects in the ArSarcasm dataset -->
-
-<h2 id="what-the-data-showed">What the data showed</h2>
-
-<p>The first number that came out of the analysis was 16%. One in every six tweets in these sentiment datasets was sarcastic. That is not a rare edge case. It is a routine feature of how people write in Arabic on social media. The expectation going in had been that sarcasm would be a minority phenomenon — present but marginal. It was not marginal.</p>
-
-<p>The second finding was about what sarcasm does to sentiment. When you look at sarcastic tweets and ask what sentiment they actually express — what the author <em>meant</em>, not what the surface form suggests — the distribution flips sharply. Tweets that look positive are, in the majority of sarcastic cases, actually negative in intent. The surface form and the intended meaning run in opposite directions.</p>
-
-<!-- INSERT FIGURE: chart showing sentiment label distribution in sarcastic vs non-sarcastic tweets, illustrating the inversion effect -->
-
-<p>The practical consequence of this is measurable. Sentiment classifiers trained and evaluated on datasets that ignore sarcasm are being tested on flawed gold labels — because some of those gold labels reflect the surface form of sarcastic tweets rather than their intended meaning. When you separate the sarcastic tweets from the rest and look at how sentiment models perform on each group, the gap is significant. Sarcasm is not just noise. It is structured noise that pulls in a specific direction.</p>
-
-<h2 id="annotating-subjectivity">Annotating subjectivity</h2>
-
-<p>Annotating sarcasm is not like annotating named entities or part-of-speech tags. There is no ground truth in the same sense. Whether you read a sentence as sarcastic depends on who you are, what you know, what culture you inhabit, and whether you share context with the author. The annotators in this dataset were labelling other people’s words — <em>perceived</em> sarcasm, in the terminology the field later adopted — which means their judgements are genuine but not authoritative.</p>
-
-<p>The inter-annotator agreement reflects this. It is lower than you would see on more clear-cut annotation tasks, and that is not a failure of the process — it is an honest property of the task. Sarcasm is genuinely ambiguous in ways that many NLP labels are not.</p>
-
-<p>This turned out to be the most interesting design question raised by the dataset: if perceived sarcasm is noisy because annotators can miss the author’s intent, what would it look like to collect sarcasm that <em>authors label themselves</em>? That question pointed directly to the next stage of the work — but that is a different story.</p>
-
-<h2 id="what-a-model-can-do-with-it">What a model can do with it</h2>
-
-<p>A BiLSTM trained on ArSarcasm as a baseline achieved an F1-sarcasm score of 0.46. That number looks low, and by the standards of saturated benchmarks it is. But sarcasm detection on a genuinely hard, multilingual, dialectally diverse dataset with noisy labels has a very different difficulty profile than, say, part-of-speech tagging. The 0.46 was never meant to represent a solution — it was a stake in the ground, a starting point for the community to build from.</p>
-
-<!-- INSERT FIGURE: results table comparing model performance on sarcasm detection in ArSarcasm -->
-
-<p>The dataset is publicly available at <a href="https://github.com/iabufarha/ArSarcasm">github.com/iabufarha/ArSarcasm</a>, and the paper is at the <a href="https://aclanthology.org/2020.osact-1.5/">ACL Anthology</a>.</p>
-
-<h2 id="what-came-next">What came next</h2>
-
-<p>ArSarcasm-v2 extended the dataset to 15,548 tweets — better dialectal coverage, cleaner distribution — and became the basis for the WANLP 2021 Shared Task on Sarcasm and Sentiment Detection in Arabic. The shared task drew significant participation from the Arabic NLP community and helped establish the benchmarks in a more systematic way.</p>
-
-<p>And the question that would not go away — the one about intended versus perceived sarcasm, about whether you could build a dataset where the labels came from authors rather than annotators — eventually led to the Arabic iSarcasmEval dataset and SemEval-2022 Task 6. But that is the next chapter.</p>]]></content><author><name></name></author><category term="research" /><category term="arabic-nlp" /><category term="sarcasm" /><category term="sentiment-analysis" /><category term="dataset" /><summary type="html"><![CDATA[Arabic sentiment tools work well — until the text is sarcastic. This is how we built the first dataset to tackle that problem.]]></summary></entry></feed>
