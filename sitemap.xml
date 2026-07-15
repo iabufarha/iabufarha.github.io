@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://iabufarha.github.io/news/announcement_2/</loc>
-<lastmod>2015-11-07T20:11:00+00:00</lastmod>
-</url>
-<url>
-<loc>https://iabufarha.github.io/news/announcement_3/</loc>
-<lastmod>2016-01-15T11:59:00+00:00</lastmod>
-</url>
-<url>
 <loc>https://iabufarha.github.io/news/semeval_train/</loc>
 <lastmod>2021-09-03T00:00:00+01:00</lastmod>
 </url>
@@ -76,19 +68,10 @@
 <loc>https://iabufarha.github.io/</loc>
 </url>
 <url>
-<loc>https://iabufarha.github.io/_pages/other/dropdown/</loc>
-</url>
-<url>
-<loc>https://iabufarha.github.io/projects/</loc>
-</url>
-<url>
 <loc>https://iabufarha.github.io/publications/</loc>
 </url>
 <url>
 <loc>https://iabufarha.github.io/resources/</loc>
-</url>
-<url>
-<loc>https://iabufarha.github.io/teaching/</loc>
 </url>
 <url>
 <loc>https://iabufarha.github.io/blog/tag/arabic-nlp/</loc>
