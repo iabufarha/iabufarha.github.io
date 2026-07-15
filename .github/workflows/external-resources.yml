@@ -1,0 +1,47 @@
+name: External resources
+
+# Guards the shipped HTML against the polyfill.io class of supply-chain issue:
+# every third-party script/stylesheet must be pinned to an exact version and
+# carry an SRI hash. Runs on the generated output, so no Jekyll build is needed.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Third-party scripts and stylesheets must be pinned and carry SRI
+        run: |
+          # Hosts whose responses vary per request, so a fixed SRI hash cannot match.
+          allowlist='fonts\.googleapis\.com|googletagmanager\.com|cdn\.panelbear\.com'
+          fail=0
+
+          # Only resources the browser executes or applies. rel=canonical/alternate/icon
+          # are metadata, not fetched code, and are deliberately excluded.
+          no_sri=$( { grep -rnoE '<script[^>]+src="https?://[^"]+"[^>]*>' --include='*.html' . || true
+                      grep -rnoE '<link[^>]+href="https?://[^"]+"[^>]*>' --include='*.html' . \
+                        | grep 'rel="stylesheet"' || true
+                    } | grep -vE "$allowlist" | grep -v 'integrity=' || true)
+          if [ -n "$no_sri" ]; then
+            echo "::error::Third-party resource without an SRI integrity hash:"
+            echo "$no_sri"
+            fail=1
+          fi
+
+          # A tag like @4 or @latest silently ships new upstream code on every request.
+          mutable=$(grep -rnoE '(src|href)="https?://[^"]*@(latest|[0-9]+)/' --include='*.html' . || true)
+          if [ -n "$mutable" ]; then
+            echo "::error::Mutable version tag - pin an exact version:"
+            echo "$mutable"
+            fail=1
+          fi
+
+          if [ "$fail" -eq 0 ]; then
+            echo "OK: all third-party resources are pinned and carry SRI."
+          fi
+          exit "$fail"
